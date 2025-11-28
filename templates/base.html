@@ -14,7 +14,7 @@
           <a href="https://wa.me/554498219161" target="_blank" class="btn-whatsapp">
             <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="icon-whatsapp" />
             <span>Entre em contato pelo WhatsApp</span>
-          </a> 
+          </a>
         </div>
         <nav class="main-nav">
           <a href="/">Home</a>
@@ -28,28 +28,38 @@
 
     <main>
       {% block content %}
+
       {% endblock %}
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <p>© {{ now.year }} Associação Jurídica — Todos os direitos reservados.</p>
-
-        <div class="footer-whatsapp">
-          <a href="https://wa.me/554498219161" target="_blank" class="btn-whatsapp">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="icon-whatsapp" />
-            <span>Entre em contato pelo WhatsApp</span>
-          </a>
+      <div class="container footer-flex">
+        <div class="footer-left">
+          <p>© {{ now.year }} Associação Jurídica — Todos os direitos reservados.</p>
+          <div class="footer-whatsapp">
+            <a href="https://wa.me/554498219161" target="_blank" class="btn-whatsapp">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="icon-whatsapp" />
+              <span>Entre em contato pelo WhatsApp</span>
+            </a>
+          </div>
         </div>
+
         <div class="footer-card">
-          <h4>Desenvolvido por</h4>
-          <p><strong>Nome:</strong> Rerisson Rodrigues</p>
-          <p><strong>Email:</strong> <a href="mailto:rerisson.rodrigues@hotmail.com">rerisson.rodrigues@hotmail.com</a></p>
-          <p><strong>GitHub:</strong> <a href="https://github.com/RerissonHRS" target="_blank">RerissonHRS</a></p>
-          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rerisson-rodrigues" target="_blank">Perfil</a></p>
+          <h4>Desenvolvedor do Site</h4>
+          <p>
+            <strong>Nome:</strong> Rerisson Henrique Rodrigues da Silva
+          </p>
+          <p>
+            <strong>Email:</strong> <a href="mailto:rerisson.rodrigues@hotmail.com">rerisson.rodrigues@hotmail.com</a>
+          </p>
+          <p>
+            <strong>GitHub:</strong> <a href="https://github.com/RerissonHRS" target="_blank">github/RerissonHRS</a>
+          </p>
+          <p>
+            <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rerisson-rodrigues" target="_blank">linkedin/Rerisson</a>
+          </p>
         </div>
       </div>
     </footer>
   </body>
 </html>
-

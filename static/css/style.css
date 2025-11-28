@@ -409,35 +409,39 @@ span {
   /* dourado elegante */
 }
 
-footer {
-  background-color: #00274d; /* azul escuro */
+.site-footer {
+  background-color: #000000;
   color: #fff;
   padding: 20px;
-  text-align: center;
 }
 
-.site-footer {
-  background-color: #00274d; /* azul escuro */
-  color: #fff;
-  padding: 20px;
-  text-align: center;
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-left {
+  max-width: 60%;
 }
 
 .footer-card {
-  background-color: #ffffff;
+  background-color: transparent;
   color: #333;
-  display: inline-block;
-  padding: 15px;
-  border-radius: 8px;
+  padding: 1px;
+  border-radius: 1px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   max-width: 280px;
-  margin-top: 15px;
-  text-align: left;
+  font-size: 0.95em;
+  text-align: center;
 }
 
 .footer-card h4 {
-  margin-bottom: 10px;
-  color: #00274d;
+  margin-bottom: 0px;
+  color: #ffffff;
+  text-align: center;
 }
 
 .footer-card p {
