@@ -46,7 +46,7 @@
   <!-- PRÉVIA NOTÍCIAS -->
   <section class="noticias-preview">
     <div class="container">
-      <h2>Últimas Notícias</h2>
+      <h2>Notícias Atuais</h2>
 
       <div class="news-grid">
         {% for noticia in noticias_preview %}
@@ -56,7 +56,7 @@
             <a href="/noticias/{{ noticia.id }}/" class="btn-link">Ler mais</a>
           </div>
         {% empty %}
-          <p>Nenhuma notícia disponível.</p>
+          <p>Clique e saiba quais as atuais notícias jurídicas.</p>
         {% endfor %}
       </div>
 
