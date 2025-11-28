@@ -1,8 +1,17 @@
 from pathlib import Path
+import os
+
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'dev-secret-key'
-DEBUG = True
-ALLOWED_HOSTS = []
+
+# ⚠️ Em produção, use uma SECRET_KEY segura vinda de variável de ambiente
+SECRET_KEY = os.getenv('SECRET_KEY', 'dev-secret-key')
+
+# Em produção, deixe False
+DEBUG = os.getenv('DEBUG', 'True') == 'True'
+
+# Render usa domínio .onrender.com
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',') if not DEBUG else []
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -10,12 +19,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # apps locais
     'core',
     'diretoria',
     'noticias',
 ]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    # Whitenoise para servir estáticos em produção
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -23,7 +36,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 ROOT_URLCONF = 'associacao_site.urls'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -39,18 +54,30 @@ TEMPLATES = [
         },
     },
 ]
+
 WSGI_APPLICATION = 'associacao_site.wsgi.application'
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+    # Em produção, você pode trocar para PostgreSQL usando DATABASE_URL
 }
+
 AUTH_PASSWORD_VALIDATORS = []
+
 LANGUAGE_CODE = 'pt-br'
 TIME_ZONE = 'America/Sao_Paulo'
 USE_I18N = True
 USE_TZ = True
+
+# Configuração de estáticos
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATICFILES_DIRS = [BASE_DIR / 'static']  # arquivos locais
+STATIC_ROOT = BASE_DIR / 'staticfiles'    # onde collectstatic junta tudo
+
+# Whitenoise para servir estáticos comprimidos
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
