@@ -1,31 +1,47 @@
-# Projeto - Site Institucional (Associação)
-Estrutura inicial em Django com páginas:
-- Home
-- Sobre
-- Diretoria (lista e detalhe)
-- Notícias (lista e detalhe)
-- Contato (form)
-- Formulário de Associação (form)
+# Site-Ass.-Advogados
 
-## Como usar (local)
-1. Crie um ambiente virtual e instale dependências:
-   ```
-   python -m venv .venv
-   .venv\Scripts\activate  # Windows
-   source .venv/bin/activate # macOS/Linux
-   pip install -r requirements.txt
-   ```
-2. Rode migrações e crie superuser:
-   ```
-   python manage.py migrate
-   python manage.py createsuperuser
-   ```
-3. Rode o servidor:
-   ```
-   python manage.py runserver
-   ```
-4. Acesse o admin em `/admin/` para cadastrar Áreas, Membros e Notícias.
+Projeto Django para a Associação Jurídica Pricila Cheida & Fred Alvão.
 
-Observações:
-- Substitua `static/img/bg.jpg` por uma imagem de hero de alta qualidade.
-- Para enviar e-mails de contato, configure o EMAIL_BACKEND no settings.py.
+## 🚀 Como rodar localmente
+
+1. Clone o repositório:
+bash
+   git clone https://github.com/RerissonHRS/Site-Ass.-Advogados.git
+   cd Site-Ass.-Advogados
+Crie o ambiente virtual:
+
+bash
+python -m venv .venv
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # Linux/Mac
+Instale as dependências:
+
+bash
+pip install -r requisitos.txt
+Configure o .env:
+
+bash
+cp .env.example .env
+Execute as migrações:
+
+bash
+python manage.py migrate
+Inicie o servidor:
+
+bash
+python manage.py runserver
+📁 Estrutura do projeto
+site_associacao/ — núcleo do projeto Django
+
+essencial/, régia/, notícias/ — apps internos
+
+estático/ — arquivos estáticos (CSS, JS, imagens)
+
+modelos/ — templates HTML
+
+📦 Requisitos
+Python 3.10+
+
+Django 4.x
+
+Git
