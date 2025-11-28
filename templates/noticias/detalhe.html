@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container noticia-detalhe">
+  <h2>{{ noticia.titulo }}</h2>
+  <article>{{ noticia.conteudo|linebreaks }}</article>
+</section>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container membro-detalhe">
+  <h2>{{ membro.nome }}</h2>
+  <p><strong>Cargo:</strong> {{ membro.cargo }}</p>
+  <div>{{ membro.bio }}</div>
+</section>
+{% endblock %}

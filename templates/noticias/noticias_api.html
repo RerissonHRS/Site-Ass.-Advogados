@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <section class="container">
+    <h2 class="titulo-noticias">Notícias Jurídicas do Paraná</h2>
+    <hr />
+
+    {% if noticias %}
+      <ul class="lista-noticias">
+        {% for n in noticias %}
+          <li class="noticia-card">
+            <h4>
+              {% if n.api %}
+                📌 {{ n.titulo }} <span class="badge">API TRT9</span>
+              {% else %}
+                {{ n.titulo }}
+              {% endif %}
+            </h4>
+
+            <p>{{ n.resumo }}</p>
+
+            <small>Publicado em: {{ n.publicado_em }}</small><br />
+
+            {% if n.api %}
+              <a href="{{ n.link }}" target="_blank" class="btn-link">Ver no TRT9</a>
+            {% else %}
+              <a href="{% url 'noticia_detalhe' n.slug %}" class="btn-link">Ler mais</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Nenhuma notícia encontrada.</p>
+    {% endif %}
+  </section>
+{% endblock %}

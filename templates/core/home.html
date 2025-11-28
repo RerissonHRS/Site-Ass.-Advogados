@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <!-- HERO PRINCIPAL ESTILO DO MODELO -->
+  <section class="hero">
+    <div class="hero-inner container">
+      <!-- Texto da esquerda -->
+      <div class="hero-text">
+        <h1>Priscila Cheida & Frederico Alvão</h1>
+        <h2>Consultoria e Assessoria Jurídica</h2>
+        <p>Buscamos estabelecer relações sólidas e de confiança com nossos, clientes, associados e parceiros.</p>
+        <a class="btn-primary" href="/sobre/">Sobre Nós</a>
+      </div>
+
+      <!-- Áreas de atuação à direita -->
+      <div class="hero-areas">
+        <h3>Áreas de Atuação :</h3>
+        <div class="areas-cards">
+          <div class="card-area">
+            <h4>Cívil</h4>
+            <p>Atuação em questões de direito civil, como contratos, responsabilidade civil, família e sucessões.</p>
+          </div>
+          <div class="card-area">
+            <h4>Trabalhista</h4>
+            <p>Defesa e consultoria em relações de trabalho, direitos trabalhistas, acordos e litígios entre empregados e empregadores.</p>
+          </div>
+          <div class="card-area">
+            <h4>Penal</h4>
+            <p>Atuação em processos criminais, garantindo ampla defesa e proteção dos direitos fundamentais dos clientes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO INSTITUCIONAL -->
+  <section class="institucional-section">
+    <div class="container">
+      <h2>Quem Somos</h2>
+      <p>Somos uma Associação Jurídica atua na defesa dos interesses dos advogados associados, promovendo conhecimento, networking e suporte institucional. Trabalhamos com responsabilidade e compromisso para fortalecer a classe jurídica.</p>
+      <a href="/sobre/" class="btn-secondary">Saiba Mais</a>
+    </div>
+  </section>
+
+  <!-- PRÉVIA NOTÍCIAS -->
+  <section class="noticias-preview">
+    <div class="container">
+      <h2>Últimas Notícias</h2>
+
+      <div class="news-grid">
+        {% for noticia in noticias_preview %}
+          <div class="news-card">
+            <h4>{{ noticia.titulo }}</h4>
+            <p>{{ noticia.conteudo|truncatechars:150 }}</p>
+            <a href="/noticias/{{ noticia.id }}/" class="btn-link">Ler mais</a>
+          </div>
+        {% empty %}
+          <p>Nenhuma notícia disponível.</p>
+        {% endfor %}
+      </div>
+
+      <div class="center-btn">
+        <a href="/noticias/" class="btn-secondary">Ver Todas as Notícias</a>
+      </div>
+    </div>
+  </section>
+{% endblock %}

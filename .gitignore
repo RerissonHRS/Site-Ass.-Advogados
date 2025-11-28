@@ -1,0 +1,52 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.env.*
+.venv/
+venv/
+env/
+
+# Dependências e pacotes
+node_modules/
+*.egg-info/
+dist/
+build/
+
+# Django
+db.sqlite3
+staticfiles/
+static_root/
+media/
+uploads/
+
+# Logs e cache
+*.log
+logs/
+.cache/
+.pytest_cache/
+.coverage
+coverage.xml
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Testes e lint
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Docker
+docker-compose.override.yml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Settings locais (se tiver)
+settings_local.py

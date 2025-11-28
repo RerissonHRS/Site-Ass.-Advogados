@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <section class="container">
+    <h2 class="titulo-noticias">Notícias Jurídicas do Paraná</h2>
+    <hr />
+
+    {% if noticias %}
+      <ul class="lista-noticias">
+        {% for n in noticias %}
+          <li class="noticia-card {% if n.api %}
+              api-card
+            {% else %}
+              interna-card
+            {% endif %}">
+            <!-- Título -->
+            <h4>
+              {{ n.titulo }}
+              {% if n.api %}
+                <span class="badge">API DataJUD</span>
+              {% endif %}
+            </h4>
+
+            <!-- Prévia da notícia -->
+            <div class="resumo-box">
+              <p>{{ n.resumo|safe }}</p>
+            </div>
+
+            <!-- Data -->
+            <small>Publicado em: {{ n.publicado_em }}</small><br />
+
+            <!-- Link -->
+            {% if n.api %}
+              <a href="{{ n.link }}" target="_blank" class="btn-link">🔗 Acessar Portal</a>
+            {% else %}
+              <a href="{% url 'noticia_detalhe' n.slug %}" class="btn-link">📖 Ler mais</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Nenhuma notícia encontrada.</p>
+    {% endif %}
+  </section>
+{% endblock %}

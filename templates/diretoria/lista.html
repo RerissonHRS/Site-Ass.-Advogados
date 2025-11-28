@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container membros">
+  <h2>Diretoria</h2>
+  <div class="membros-list">
+    {% for m in membros %}
+      <article class="membro">
+        {% if m.foto %}
+          <img src="{{ m.foto.url }}" alt="{{ m.nome }}"/>
+        {% endif %}
+        <h3><a href="{{ m.get_absolute_url|default:'/diretoria/' }}">{{ m.nome }}</a></h3>
+        <p class="cargo">{{ m.cargo }}</p>
+        <p>{{ m.bio|truncatechars:140 }}</p>
+      </article>
+    {% empty %}
+      <p>Sem membros cadastrados.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

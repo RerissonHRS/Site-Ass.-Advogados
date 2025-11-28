@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container associar">
+  <h2>Formulário de Associação</h2>
+  <form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn-primary">Enviar Solicitação</button>
+  </form>
+</section>
+{% endblock %}

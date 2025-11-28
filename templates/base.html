@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Associação Jurídica</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo">
+          <a href="https://wa.me/554498219161" target="_blank" class="btn-whatsapp">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="icon-whatsapp" />
+            <span>Entre em contato pelo WhatsApp</span>
+          </a> 
+        </div>
+        <nav class="main-nav">
+          <a href="/">Home</a>
+          <a href="/sobre/">Sobre</a>
+          <a href="/noticias/">Notícias</a>
+          <a href="/contato/">Contato</a>
+          <a class="btn-cta" href="/associar/">Associar-se</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      {% block content %}
+
+      {% endblock %}
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>© {{ now.year }} Associação Jurídica — Todos os direitos reservados.</p>
+
+        <div class="footer-whatsapp">
+          <a href="https://wa.me/554498219161" target="_blank" class="btn-whatsapp">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="icon-whatsapp" />
+            <span>Entre em contato pelo WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
