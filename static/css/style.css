@@ -85,8 +85,7 @@ span {
   /* força branco no SVG preto externo */
 }
 
-/* HEADER */
-
+/* Header padrão */
 .site-header {
   background: var(--dark);
   color: var(--light);
@@ -94,7 +93,6 @@ span {
   top: 0;
   z-index: 10;
 }
-
 
 .header-inner {
   display: flex;
@@ -116,6 +114,46 @@ span {
   border-radius: 8px;
   color: var(--light);
   font-weight: 700;
+}
+
+/* Botão hamburguer escondido em desktop */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: var(--light);
+  cursor: pointer;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: var(--dark);
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .main-nav a {
+    margin: 10px 0;
+    display: block;
+  }
+
+  /* Quando ativo */
+  .main-nav.active {
+    display: flex;
+  }
 }
 
 /* HERO */
@@ -437,7 +475,8 @@ span {
   }
 
   .footer-card {
-    margin-top: 10px;
+    padding: 15px;
+    font-size: 0.9em;
   }
 }
 
